@@ -1,0 +1,79 @@
+/*модальные окна */
+
+/*в данном случае это задний полупрозрачный фон */
+.popup{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0,.8);
+    top: 0;
+    left: 0;
+    /*при помощи
+    (opacity: 0;
+    visibility: hidden;)
+    мы скрывает модалку */
+    opacity: 0;
+    visibility: hidden;
+    /*что бы могли листать модалку ппри большом количестве тенста нужно добавит
+    (overflow-y: auto;
+    overflow-x: hidden;) */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* при мобощи этого мы при помощи псевдокласса (:target)
+проявляем модальное окно (заблочено в класе .popup)*/
+.popup:target{
+    opacity: 1;
+    visibility: visible;
+}
+
+/*при помощи этого делаем пространство вокру модалки кликабельным на закрытие 
+добавить в  модалку (<a href="#some_block" class="popup_area"></a>) */
+.popup_area{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.popup_body{
+
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+}
+
+.popup_content{
+    background-color: white;
+    color: #000;
+    max-width: 800px;
+    padding: 30px;
+    position: relative;
+}
+
+.popup_close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px ;
+    text-decoration: none;
+    color: black;
+}
+
+
+.popup_title{
+    font-size: 40px;
+    margin: 0px 0px 1em 0px;
+    text-align: center;
+    
+
+}
+
+.popup_text{
+    text-align: center;
+    
+}

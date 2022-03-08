@@ -1,0 +1,148 @@
+/*при добавлении шрифтов с https://fonts.google.com/
+всегда вставлять сверху */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,300;1,400&display=swap');
+
+
+.main-text{
+  color: rgb(111, 0, 255);
+}    
+#text-in-p{
+    color: salmon;
+}
+
+
+
+div b, div i {
+    color: seagreen;
+}
+.main-link{
+  color: red;
+ text-decoration: none;
+}
+/*псевдоклас*/
+/*  что бы меняся цвет при наведении на него
+ (в данном случае ещё подчёркивание сверу)
+ text-decoration-color- цвет подчёркивания 
+ и курсор  */
+
+.main-link:hover {
+  color: blue;
+  text-decoration: underline;
+  text-decoration-color: rgb(13, 245, 90);
+  cursor:pointer ;
+}
+/*при наведении на текст он станвится перечёркнутым */
+.main-link:active{
+  text-decoration: line-through;
+}
+/*для ссылок которые использовали  что бы поменялся цвет 
+*/
+.main-link:visited{
+  color: gray;
+
+}
+/* поле ввода */
+input{color: blue}
+/*поле обязательное к заполнению*/
+input:required{
+  color: aqua;
+}
+/*работа при активном поле */
+input:focus {color:  red}
+
+/*только абзацы которые не пустые*/
+p.text:not(:empty){
+color: gray;
+}
+/*при наведени мыши на объект фон 
+будет менят ьцвет на заданный*/
+/*div:hover {
+	background-color: blue
+}*/
+
+/*ПСЕВДОЭЛЕМЕНТЫ 
+всегда по 2 двоеточия (::)*/
+/*благодаря псевд жэлементу after
+ добавляем текст который ельзхя выделить после текста */
+#some_id::after{
+  content: '123';
+  color: red;
+  text-decoration:line-through ;
+}
+p.text:empty::after{
+  content: attr(title);
+}
+/*d этом псевдэлементе обращение только к 
+первому символу внутри абзаца
+и её размер в пискселях 
+(font-size(можно устанавливать другие ))*/
+p.main-link::first-letter{
+color: brown;  
+font-size: 50px;
+}
+/* в данном случае применяется 
+благодря элементу только к первому подходящему абзацу*/
+p:first-of-type{
+  text-decoration: line-through;
+}
+
+
+/*цвет фона или картинка на фон 
+(и что бы она не повторялась(background-repeat: no-repeat;) 
+и позицианирование картинки (обязательно указать height: 100vh;))*/
+/*body{
+  background-color:chartreuse;
+  background-image: url('https://cdn.wallpapersafari.com/22/85/kwGbHB.jpg');
+background-repeat: no-repeat;
+background-position: center;
+}*/
+/*более краткий вариант пред пункта
+и ууказание высоты картинки на экране
+размер картинки на весь экран (background-size:cover ;) */
+/*body{
+  background: chartreuse url('https://cdn.wallpapersafari.com/22/85/kwGbHB.jpg')
+ no-repeat center;
+ height: 100vh;
+ background-size:cover ;
+ background-attachment: fixed;
+}
+*/
+
+/*при помощи background-attachment: fixed;
+фиксируем фон на 1 месте*/
+#first{
+  background: chartreuse url('https://cdn.wallpapersafari.com/22/85/kwGbHB.jpg')
+ no-repeat center;
+ height: 500px; /*высота прозрачного окна */
+ background-size:cover ;
+ background-attachment: fixed;
+}
+/*высота (height: 2000px;)*/
+#second{
+  height: 200px;
+}
+ /*положение текста на странице (text-align: center)
+ размер текста в пикселях font-size: 15px 
+ стилистика текста в данном случае наклон font-style: italic;
+ жирность (толщина букв) текста  font-weight: bold;
+тип шрифта  font-family: fantasy;
+ригистр символов в тексте  text-transform: uppercase-capitalize-и тд;
+пространстово между словами   word-spacing: 10px;
+пространство между символами  letter-spacing: 10px;
+растояние между строками line-height: 10px;
+
+ */
+
+.text2 {
+  color: red;
+  text-align: center;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  text-transform: lowercase ;
+  word-spacing: 10px;
+  letter-spacing: 2px;
+  line-height: 10px;
+} 
+
